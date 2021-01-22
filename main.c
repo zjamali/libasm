@@ -6,7 +6,13 @@
 /*   By: zjamali <zjamali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 08:44:56 by zjamali           #+#    #+#             */
-/*   Updated: 2021/01/14 08:45:03 by zjamali          ###   ########.fr       */
+/*   Updated: 2021/01/22 19:04:18 by zjamali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+void print(int i, char *str,int k);
+int main()
+{
+	print(1,"Hello, amine\n",15);
+	return 0;
+}
