@@ -6,7 +6,7 @@
 /*   By: zjamali <zjamali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 08:44:56 by zjamali           #+#    #+#             */
-/*   Updated: 2021/01/25 12:53:56 by zjamali          ###   ########.fr       */
+/*   Updated: 2021/01/25 19:19:15 by zjamali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,14 @@ int main()
 	//char src[20] = "hello xouhair";
 	//int result = ft_strcmp(dst, src);
 	//int i = ft_write(0,NULL,1);
-	//int i  = ft_strlen(NULL);
+	//int i  = ft_strlen("Zouhair");
 	//printf("mine --> %d",i);
 	//int result1 = strcmp(dst, src);
 	//printf("     ret--> %d\n     error --> %s",i,strerror(errno));
 
-	char *s = ft_strdup("Zouhair");
-	printf("  {%s}  ",s);
+	char *s = ft_strdup(NULL);
+	//printf("{%s}",s);
+	printf("  {%s}  error ->%s",s,strerror(errno));
 	
 	return 0;
 }
