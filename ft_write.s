@@ -1,14 +1,20 @@
-		global _ft_write
+		global	_ft_write
 		extern  ___error
 
 		section .text
 
 _ft_write: ;ft_write(rdi,rsi,rdx)
-			cmp rdx , 0
-			jl _end
 			mov rax , 0x02000004
 			syscall
+			jc _ret
 			ret
-_end:
-			call ___error
-			
+
+_ret:
+		push rax
+		call ___error
+		pop r8
+		mov [rax],r8
+		;pop qword [rax]
+		mov rax, -1
+		ret
+
