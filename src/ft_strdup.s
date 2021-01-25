@@ -10,6 +10,7 @@ _ft_strdup: ; rax	ft_strdup(rdi);
 			mov rdi,rax ; mov rax to rdi now the rdi is argument of malloc 
 			inc rdi ; incre lenght
 			mov rdi , rax
+			;mov rdi, -1
 			call _malloc ; rax get the pointer char *
 			mov rdi, rax
 			pop rsi

@@ -1,20 +1,29 @@
-NAME= libasm.a
+NAME = libasm.a
 
-SRC=	ft_read.s ft_strcmp.s ft_strcpy.s ft_strdup.s ft_strlen.s ft_write.s
+SRCS =	ft_strlen.s \
+		ft_strcpy.s \
+		ft_strcmp.s \
+		ft_write.s	\
+		ft_read.s	\
+		ft_strdup.s
 
-LIB= libasm.h
-OBJ= $(SRC:.c=.o)
-OBJB= $(SRCB:.c=.o)
+OBJS = $(SRCS:.s=.o)
+
+%.o	: %.s
+	nasm -f macho64 $< -o $@
+
+$(NAME): $(OBJS) 
+	ar rcs $(NAME) $(OBJS)
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(LIB)
-	@nasm -fmacho64 $(SRC)
-	@ar rc $(NAME) $(OBJ) 
-	@ranlib $(NAME)
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJ)
+	ranlib $(NAME)
+
 
 clean:
-	@rm -f $(OBJ) $(OBJB)
+	@rm -rf obj
 
 fclean: clean 
 	@rm -f $(NAME)
