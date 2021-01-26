@@ -32,7 +32,7 @@ int main()
 	//int result1 = strcmp(dst, src);
 	//printf("     ret--> %d\n     error --> %s",i,strerror(errno));
 
-	char *s = ft_strdup(NULL);
+	char *s = ft_strdup("Zouhair");
 	//printf("{%s}",s);
 	printf("  {%s}  error ->%s",s,strerror(errno));
 	
