@@ -3,18 +3,15 @@
 
 		section .text
 
-_ft_write: ;ft_write(rdi,rsi,rdx)
-			mov rax , 0x02000004
+_ft_write: mov rax , 0x02000004
 			syscall
 			jc _ret
 			ret
 
-_ret:
-		push rax
+_ret: 	push rax
 		call ___error
-		pop r8
-		mov [rax],r8
-		;pop qword [rax]
+		pop rcx
+		mov [rax],rcx
 		mov rax, -1
 		ret
 

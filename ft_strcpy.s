@@ -11,6 +11,6 @@ loop:
 			inc r8
 			jmp loop
 ret:
-	mov [rax + r8] , byte 0
+	mov [rdi + r8] , byte 0
 	mov rax , rdi
 	ret
